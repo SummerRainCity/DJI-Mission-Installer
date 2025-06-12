@@ -51,7 +51,6 @@ This ensures that when you open the DJI Fly app, your new mission appears correc
 *   Windows 10 or newer.
 *   [.NET 8.0 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
 *   A DJI controller or Android device that uses the DJI Fly App.
-*   **(For ADB Mode)**: [Android SDK Platform Tools](https://developer.android.com/tools/sdk/mainline) installed and in your system's PATH, or the `adb.exe` included with the application. You will also need to enable USB Debugging on your device.
 
 ### Installation
 
