@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <RootNamespace>DJI_Mission_Installer</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <Version>1.1.0</Version>
+    <!-- NuGet/assembly product version (also defaults others if not set) -->
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <!-- Binding/version policy; change sparingly -->
+    <FileVersion>1.1.0.0</FileVersion>
+    <!-- Windows file properties (Details tab) -->
+    <InformationalVersion>1.1.0+build.2025.10.09</InformationalVersion>
+    <!-- Shown in About; can include metadata -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AdvancedSharpAdbClient" Version="3.4.14" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="MediaDevices" Version="1.10.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.9" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.9" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.11" />
+    <PackageReference Include="SixLabors.ImageSharp.Drawing" Version="2.1.7" />
+    <PackageReference Include="SixLabors.Fonts" Version="2.1.3" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Content Include="tools\adb.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <InternalsVisibleTo Include="DJIMissionInstaller.UnitTests" />
+  </ItemGroup>
+  
+</Project>

@@ -1,6 +1,6 @@
 # DJI Mission Installer
 
-![DJI Mission Installer Screenshot](https://github.com/MjosDrone/DJIMissionInstaller/blob/main/docs/preview.jpg?raw=true)
+![DJI Mission Installer Screenshot](https://github.com/Alos-no/DJI-Mission-Installer/blob/main/docs/preview.jpg?raw=true)
 
 ![Language](https://img.shields.io/badge/language-C%23-blue.svg)
 ![Framework](https://img.shields.io/badge/framework-WPF%20/.NET%208-purple.svg)
@@ -54,7 +54,7 @@ This ensures that when you open the DJI Fly app, your new mission appears correc
 
 ### Installation
 
-1.  Go to the [**Releases**](https://github.com/MjosDrone/DJIMissionInstaller/releases) page of this repository.
+1.  Go to the [**Releases**](https://github.com/Alos-no/DJI-Mission-Installer/releases) page of this repository.
 2.  Download the latest release `.zip` file.
 3.  Extract the contents to a folder on your computer.
 4.  Run `DJI Mission Installer.exe`.
@@ -87,7 +87,7 @@ If you want to build the project yourself, follow these steps.
 
 1.  Clone the repository:
     ```sh
-    git clone https://github.com/MjosDrone/DJIMissionInstaller.git
+    git clone https://github.com/Alos-no/DJI-Mission-Installer.git
     ```
 2.  Open the `DJI Mission Installer.sln` solution file in Visual Studio.
 3.  Restore the NuGet packages (this should happen automatically).
