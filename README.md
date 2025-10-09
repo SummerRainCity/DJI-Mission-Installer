@@ -3,7 +3,7 @@
 ![DJI Mission Installer Screenshot](https://github.com/Alos-no/DJI-Mission-Installer/blob/main/docs/preview.jpg?raw=true)
 
 [![Language C#](https://img.shields.io/badge/Language-C%23-blue?style=for-the-badge&logo=c-sharp)](https://docs.microsoft.com/en-us/dotnet/csharp/)
-[![Framework .NET 8](https://img.shields.io/badge/Framework-.NET%208-purple?style=for-the-badge&logo=.net)](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+[![Framework .NET 8](https://img.shields.io/badge/Framework-.NET%209-purple?style=for-the-badge&logo=.net)](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 [![Platform Windows](https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows)](https://www.microsoft.com/en-us/windows)
 [![License Apache 2.0](https://img.shields.io/badge/license-Apache%20License%202.0-yellow?style=for-the-badge)](https://opensource.org/license/apache-2-0)
 
