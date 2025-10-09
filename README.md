@@ -5,7 +5,7 @@
 [![Language C#](https://img.shields.io/badge/Language-C%23-blue?style=for-the-badge&logo=c-sharp)](https://docs.microsoft.com/en-us/dotnet/csharp/)
 [![Framework .NET 8](https://img.shields.io/badge/Framework-.NET%208-purple?style=for-the-badge&logo=.net)](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 [![Platform Windows](https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows)](https://www.microsoft.com/en-us/windows)
-[![License MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![License Apache 2.0](https://img.shields.io/badge/license-Apache%20License%202.0-yellow?style=for-the-badge)](https://opensource.org/license/apache-2-0)
 
 **DJI Mission Installer** is a Windows desktop application designed to simplify the process of transferring custom waypoint mission files (`.kmz`) to DJI devices that use the DJI Fly app, such as the DJI RC, RC2, Smart Controller, or any Android phone connected to a controller.
 
