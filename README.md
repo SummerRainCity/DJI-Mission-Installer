@@ -1,123 +1,126 @@
-# DJI Mission Installer
+# DJI 任务安装器
 
-![DJI Mission Installer Screenshot](https://github.com/Alos-no/DJI-Mission-Installer/blob/main/docs/preview.jpg?raw=true)
+![DJI 任务安装器截图](https://github.com/Alos-no/DJI-Mission-Installer/blob/main/docs/preview.jpg?raw=true)
 
 [![Language C#](https://img.shields.io/badge/Language-C%23-blue?style=for-the-badge&logo=c-sharp)](https://docs.microsoft.com/en-us/dotnet/csharp/)
 [![Framework .NET 8](https://img.shields.io/badge/Framework-.NET%209-purple?style=for-the-badge&logo=.net)](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 [![Platform Windows](https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows)](https://www.microsoft.com/en-us/windows)
 [![License Apache 2.0](https://img.shields.io/badge/license-Apache%20License%202.0-yellow?style=for-the-badge)](https://opensource.org/license/apache-2-0)
 
-**DJI Mission Installer** is a Windows desktop application designed to simplify the process of transferring custom waypoint mission files (`.kmz`) to DJI devices that use the DJI Fly app, such as the DJI RC, RC2, Smart Controller, or any Android phone connected to a controller.
+**DJI 任务安装器** 是一款 Windows 桌面应用，旨在简化将自定义航点任务文件（`.kmz`）传输到使用 DJI Fly 应用的 DJI 设备的过程，例如 DJI RC、RC2、智能控制器，或任何连接到控制器的安卓手机。
 
-It provides a clear, two-pane interface to view your local mission files and the waypoint slots on your device, allowing you to replace missions and automatically generate new preview images.
-
----
-
-## ✨ Key Features
-
--   **Dual Connection Modes**: Connect via **ADB** (Android Debug Bridge) for fast, reliable transfers, or **MTP** (Media Transfer Protocol) for simple, driver-free access.
--   **Intuitive Two-Pane View**: Easily manage your computer's local KMZ files and the waypoint missions on your connected DJI device side-by-side.
--   **Automatic Preview Generation**: When a mission is transferred, the app fetches a map tile from **ESRI's World Imagery service**, overlays it with the mission name and date, and uploads it as the new preview.
--   **Intelligent Device Detection**: Automatically scans and lists compatible Android devices that have the required DJI Fly folder structure.
--   **Real-time File Monitoring**: Your local KMZ source folder is watched for changes, and the file list updates automatically.
--   **Sorting**: Both local and device file lists can be sorted by name (using a natural string comparison), date, or size.
--   **Modern & Responsive UI**: Built with WPF for a clean, asynchronous, and user-friendly experience on Windows.
+它提供清晰的双窗格界面，可查看本地任务文件和设备上的航点插槽，支持替换任务并自动生成新的预览图片。
 
 ---
 
-## 🚀 Getting Started
+## ✨ 核心特性
 
-### Prerequisites
-
--   Windows 10 or newer.
--   [.NET 9.0 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/9.0) (or newer).
--   A DJI controller (or Android device) that uses the DJI Fly App.
-
-### Installation
-
-1.  Navigate to the [**Releases**](https://github.com/Alos-no/DJI-Mission-Installer/releases) page.
-2.  Download the `.zip` archive from the latest release.
-3.  Extract the contents to a permanent folder on your computer.
-4.  Run `DJI Mission Installer.exe`.
+- **双连接模式**：支持通过 **ADB（Android 调试桥）** 进行快速、可靠的传输，或通过 **MTP（媒体传输协议）** 实现简单、无需驱动的访问。
+- **直观的双窗格视图**：可并排管理电脑本地的 KMZ 文件和已连接 DJI 设备上的航点任务。
+- **自动预览图生成**：传输任务时，应用会从 **ESRI 全球影像服务** 获取地图瓦片，叠加任务名称和日期后，将其上传作为新的预览图。
+- **智能设备检测**：自动扫描并列出具有所需 DJI Fly 文件夹结构的兼容安卓设备。
+- **实时文件监控**：本地 KMZ 源文件夹会被实时监控，文件列表会自动更新。
+- **排序功能**：本地和设备文件列表均可按名称（自然字符串比较）、日期或大小排序。
+- **现代化响应式界面**：基于 WPF 构建，在 Windows 系统上提供简洁、异步且易用的操作体验。
 
 ---
 
-## 🔌 Connection Guide: ADB vs. MTP
+## 🚀 快速开始
 
-This application supports two protocols for communicating with your device. The optimal choice depends on your controller model.
+### 前提条件
 
--   **ADB (Android Debug Bridge)**: This is the **preferred** method. It is faster, more reliable, and provides better device feedback. It requires a one-time setup on your controller to enable "USB Debugging."
--   **MTP (Media Transfer Protocol)**: This is the standard mode for transferring files, like a digital camera. It requires no special setup but can sometimes be slower or less reliable, occasionally requiring you to unplug and reconnect the device.
+- Windows 10 或更高版本。
+- [.NET 9.0 桌面运行时](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)（或更高版本）。
+- 使用 DJI Fly 应用的 DJI 控制器（或安卓设备）。
 
-| Device Model                               | Recommended Mode | Setup Instructions                                                                                                                                                                                                                                                                   |
-| ------------------------------------------ | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **DJI RC**, **RC Pro**, **Smart Controller** | **ADB**          | **1. Enable Developer Options:** Go to `Settings` > `About` and tap on the **Build Number** seven times until you see a "You are now a developer!" message. <br/> **2. Enable USB Debugging:** Go back to `Settings`, find the new `Developer Options` menu, and enable **USB Debugging**. |
-| **Android Phone / Tablet**                 | **ADB**          | Follow the same steps as above for enabling Developer Options and USB Debugging in your device's Android settings.                                                                                                                                                                    |
-| **DJI RC2**                                | **MTP**          | The DJI RC2 connects in MTP mode by default and does not officially support ADB. For the vast majority of users, **MTP is the only option**. Simply connect the controller to your PC with a USB cable and select the MTP radio button in the app.                             |
+### 安装步骤
 
----
-
-## 📋 Usage Guide
-
-1.  **Launch the application**.
-2.  **Connect your device**: Connect your DJI controller or Android phone to your computer via USB.
-3.  **Select Connection Type**: At the top of the window, select the **ADB** or **MTP** radio button based on the guide above.
-4.  **Refresh and Select Device**: Click the **Refresh** button. Your connected device should appear in the dropdown menu. Select it.
-5.  **Choose a Source File**: In the left "KMZ Files" list, select the mission file you want to transfer. If the list is empty, click "Choose Folder" to select the directory where you store your `.kmz` files.
-6.  **Choose a Destination Slot**: In the right "Device Waypoints" list, select the mission you wish to replace.
-7.  **Transfer**: Click the **Transfer Selected File** button. A success message will appear once the process is complete. The device list will refresh to show the updated file.
-8.  Safely disconnect your device. Your new mission is now ready in the DJI Fly app!
+1. 进入 [**Releases（发布页）**](https://github.com/Alos-no/DJI-Mission-Installer/releases)。
+2. 下载最新版本的 `.zip` 压缩包。
+3. 将压缩包内容解压到电脑上的固定文件夹。
+4. 运行 `DJI Mission Installer.exe`。
 
 ---
 
-## 🛠 Building from Source
+## 🔌 连接指南：ADB vs. MTP
 
-If you want to build the project yourself, follow these steps.
+本应用支持两种与设备通信的协议，最优选择取决于你的控制器型号。
 
-### Prerequisites
+- **ADB（Android 调试桥）**：这是 **推荐** 方式。速度更快、可靠性更高，且能提供更好的设备反馈。需要在控制器上一次性设置以启用“USB 调试”。
+- **MTP（媒体传输协议）**：这是传输文件的标准模式（类似数码相机）。无需特殊设置，但有时速度较慢或可靠性稍差，偶尔需要拔插设备重新连接。
 
--   [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) with the ".NET desktop development" workload installed.
--   [.NET 9.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/9.0).
+| 设备型号                                   | 推荐模式 | 设置说明                                                                                                                                                                                                                                                                   |
+| ------------------------------------------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **DJI RC**、**RC Pro**、**智能控制器**     | **ADB**  | **1. 启用开发者选项**：进入 `设置` > `关于`，连续点击 **版本号** 七次，直到出现“你现在是开发者了！”的提示。 <br/> **2. 启用 USB 调试**：返回 `设置`，找到新增的 `开发者选项` 菜单，启用 **USB 调试**。 |
+| **安卓手机 / 平板**                        | **ADB**  | 按照上述步骤，在设备的安卓设置中启用开发者选项和 USB 调试。                                                                                                                                                                                                                |
+| **DJI RC2**                                | **MTP**  | DJI RC2 默认以 MTP 模式连接，且未官方支持 ADB。对于绝大多数用户，**MTP 是唯一可选方式**。只需用 USB 线将控制器连接到电脑，然后在应用中选择 MTP 单选按钮即可。                             |
 
-### Build Steps
+---
 
-1.  Clone the repository:
+## 📋 使用指南
+
+1. **启动应用**。
+2. **连接设备**：通过 USB 线将 DJI 控制器或安卓手机连接到电脑。
+3. **选择连接类型**：在窗口顶部，根据上述指南选择 **ADB** 或 **MTP** 单选按钮。
+4. **刷新并选择设备**：点击 **刷新** 按钮，已连接的设备会出现在下拉菜单中，选择对应的设备。
+5. **选择源文件**：在左侧“KMZ 文件”列表中，选择要传输的任务文件。若列表为空，点击“选择文件夹”按钮，选择存储 `.kmz` 文件的目录。
+6. **选择目标插槽**：在右侧“设备航点”列表中，选择要替换的任务。
+7. **传输文件**：点击 **传输选定文件** 按钮。完成后会显示成功提示，设备列表会刷新以显示更新后的文件。
+8. 安全断开设备连接，新任务已在 DJI Fly 应用中就绪！
+
+---
+
+## 🛠 从源码构建
+
+若需自行构建项目，请遵循以下步骤。
+
+### 前提条件
+
+- [Visual Studio 2022](https://visualstudio.microsoft.com/vs/)（需安装“.NET 桌面开发”工作负载）。
+- [.NET 9.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)。
+
+### 构建步骤
+
+1.  克隆当前项目:
     ```sh
     git clone https://github.com/Alos-no/DJI-Mission-Installer.git
     ```
-2.  Open the `DJI Mission Installer.sln` solution file in Visual Studio.
-3.  Restore the NuGet packages (this should happen automatically).
-4.  Build the solution (F6 or `Build > Build Solution`). The executable will be in `src/bin/Debug` or `src/bin/Release`.
+2.  打开`DJI Mission Installer.sln`。在Visual Studio中创建sln的解决方案文件。
+3.  Restore the NuGet packages (this should happen automatically).恢复NuGet包（这应该会自动发生）。
+4.  构建解决方案 (F6 or `Build > Build Solution`). 可执行文件将在 `src/bin/Debug` or `src/bin/Release`.
 
 ---
 
-## 🔧 Technical Details & Dependencies
+## 🔧 技术细节和依赖关系
 
 This project is built with C# 12 and .NET 8, using the following key technologies and libraries:
+这个项目是用c# 12和。NET 8，使用以下关键技术和库：
 
--   **WPF**: For the graphical user interface.
--   **MVVM Pattern**: Using the `CommunityToolkit.Mvvm` library for a clean separation of UI and logic.
--   **[AdvancedSharpAdbClient](https://github.com/quamotion/madb)**: A .NET library for communicating with Android devices via the Android Debug Bridge (ADB).
--   **[MediaDevices](https://github.com/pvginkel/MediaDevices)**: For accessing device storage via the Media Transfer Protocol (MTP).
--   **[SixLabors.ImageSharp](https://github.com/SixLabors/ImageSharp)**: A powerful, cross-platform 2D graphics library used for generating and watermarking the map preview images.
--   **ESRI ArcGIS REST Services**: Used to fetch satellite map tiles for the preview images.
+-   **WPF**: 用于图形用户界面。
+-   **MVVM Pattern**: 使用“CommunityToolkit.Mvvm”。Mvvm的库，一个干净的分离的UI和逻辑。
+-   **[AdvancedSharpAdbClient](https://github.com/quamotion/madb)**: 一个. NET库，用于通过Android调试桥（ADB）与Android设备通信。
+-   **[MediaDevices](https://github.com/pvginkel/MediaDevices)**: 用于通过MTP （Media Transfer Protocol）协议访问设备存储。
+-   **[SixLabors.ImageSharp](https://github.com/SixLabors/ImageSharp)**: 一个强大的跨平台2D图形库，用于生成和水印地图预览图像。
+-   **ESRI ArcGIS REST Services**: 用于获取预览图像的卫星地图块。
 
 ---
 
-## 🤝 Contributing
+## 🤝 贡献
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+贡献使开源社区成为一个学习、启发和创造的神奇场所。你所做的任何贡献我们都**非常感激**。
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+如果你有一个更好的建议，请fork repo并创建一个pull request。你也可以简单地打开一个带有“enhancement”标签的问题。
 
-1.  Fork the Project
-2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the Branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
+1.  分岔项目
+2.  创建你的特性分支（`git checkout -b Feature /AmazingFeature`）
+3.  提交更改（`git Commit -m 'Add some AmazingFeature`）
+4.  Push到分支（`git Push origin feature/AmazingFeature`）
+5.  打开拉取请求。
 
 ---
 
 ## 📄 License
 
-Distributed under the Apache 2.0 License. See `LICENSE.txt` for more information.
+在Apache 2.0许可下发布。更多信息请参见“LICENSE.txt”。
